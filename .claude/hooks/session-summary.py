@@ -32,13 +32,17 @@ def main():
     tool_counts = Counter(e["tool"] for e in entries)
     outcomes = Counter(e.get("outcome", "success") for e in entries)
 
+    # Derive operator from audit entries (most common), fallback to $USER
+    operators = Counter(e.get("operator", "") for e in entries if e.get("operator"))
+    operator = operators.most_common(1)[0][0] if operators else os.environ.get("USER", "unknown")
+
     timestamp = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     report_path = os.path.join(SUMMARY_DIR, f"session-{timestamp[:10]}.txt")
 
     lines = [
         f"Session Summary: {timestamp}",
         f"Session ID: {session_id}",
-        f"Operator: {os.environ.get('USER', 'unknown')}",
+        f"Operator: {operator}",
         "",
         f"Total actions: {len(entries)}",
         f"Successes: {outcomes.get('success', 0)}",
