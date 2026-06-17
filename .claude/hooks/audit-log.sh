@@ -11,7 +11,7 @@ INPUT=$(cat)
 
 TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
 TOOL=$(echo "$INPUT" | python3 -c "import json,sys; d=json.load(sys.stdin); print(d.get('tool_name','unknown'))" 2>/dev/null || echo "unknown")
-OPERATOR="${USER:-${USERNAME:-unknown}}"
+OPERATOR="${APP_USER:-${USER:-${USERNAME:-unknown}}}"
 
 # Extract the relevant identifier (file path or command)
 DETAIL=$(echo "$INPUT" | python3 -c "

@@ -20,7 +20,7 @@ def main():
     prompt_text = data.get("prompt", "")
     entry = {
         "timestamp": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
-        "operator": os.environ.get("USER") or os.environ.get("USERNAME") or "unknown",
+        "operator": os.environ.get("APP_USER") or os.environ.get("USER") or os.environ.get("USERNAME") or "unknown",
         "session_id": os.environ.get("CLAUDE_SESSION_ID", "unknown"),
         "prompt": prompt_text[:500],
         "prompt_length": len(prompt_text),

@@ -34,7 +34,7 @@ def main():
 
     # Derive operator from audit entries (most common), fallback to $USER
     operators = Counter(e.get("operator", "") for e in entries if e.get("operator"))
-    operator = operators.most_common(1)[0][0] if operators else os.environ.get("USER", "unknown")
+    operator = operators.most_common(1)[0][0] if operators else (os.environ.get("APP_USER") or os.environ.get("USER", "unknown"))
 
     timestamp = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     report_path = os.path.join(SUMMARY_DIR, f"session-{timestamp[:10]}.txt")

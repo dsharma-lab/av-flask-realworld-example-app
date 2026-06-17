@@ -13,6 +13,7 @@ Flask implementation of the RealWorld API spec - a Medium-like blog platform wit
 export CONDUIT_SECRET='something-really-secret'
 export FLASK_APP=/path/to/autoapp.py
 export FLASK_DEBUG=1  # For development only
+export APP_USER=yourname  # Used by audit hooks to identify operator in logs
 
 # Install dependencies
 pip install -r requirements/dev.txt
@@ -161,11 +162,11 @@ All tests must pass before merging. No exceptions.
 ## AI Pipeline Usage
 
 ### Slash Commands Available
-- `/review`: check staged changes against these conventions before committing
-- `/test-gen`: generate tests for changed files and run them
-- `/commit`: generate a conventional commit message and commit
-- `/ship`: full pipeline (review + test + commit + PR); use this for end-of-feature
-- `/onboard`: generate architecture overview for a module or the full project
+- `/review` -- check staged changes against these conventions before committing
+- `/test-gen` -- generate tests for changed files and run them
+- `/commit` -- generate a conventional commit message and commit
+- `/ship` -- full pipeline (review + test + commit + PR); use this for end-of-feature
+- `/onboard` -- generate architecture overview for a module or the full project
 
 ### Governance Hooks Active
 - `validate-bash.py`: blocks destructive bash commands (rm -rf, git push --force, etc.)

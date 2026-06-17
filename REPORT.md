@@ -62,11 +62,13 @@ What is missing:
 
 ## Q5. What is the single most compelling number in the ROI report?
 
-**$826,500 in annual productivity recovered** for a 10-person team at $150/hour.
+**5,510 hours of developer time recovered per year** for a 10-person team.
 
-The 127 minutes of daily savings per developer comes from four measured activities: code review (15 min to 1 min), test writing (28 min to 4 min), commit/PR (12 min to 2 min), and codebase orientation (20 min to 3 min). These are based on actual tasks in this repo, not benchmark estimates.
+In dollar terms, that depends on the market. For a US-based team at $150/hr it is $826,500/year. For an India-based team at $45/hr it is $247,950/year. Either way, it is a strong return.
 
-Even at a conservative 20% capture rate, the number is $165,000 per year, which is well above the cost of Claude Code. The breakeven point is within weeks.
+The 127 minutes of daily savings per developer comes from four activities: code review (15 min to 1 min), test writing (28 min to 4 min), commit/PR (12 min to 2 min), and codebase orientation (20 min to 3 min).
+
+Even at a conservative 20% capture rate (accounting for rework, learning curve, and days when the workflow is not followed), the India scenario still delivers $49,590/year, which is well above the cost of Claude Code licenses for 10 developers.
 
 ---
 

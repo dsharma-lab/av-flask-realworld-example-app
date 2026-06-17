@@ -56,19 +56,25 @@ See `docs/workflow-map.md` for the full Mermaid diagram with step annotations.
 
 ---
 
-## Projected Annual Savings (10-Person Team at $150/hr)
+## Projected Annual Savings (10-Person Team)
+
+The 5,510 hours saved per year is the common base. The dollar value depends on the team's billing rate:
+
+| Scenario | Rate | Annual Value (5,510 hrs) | Conservative (20%) |
+|----------|------|--------------------------|--------------------|
+| US market | $150/hr | $826,500 | $165,300 |
+| India market | $45/hr | $247,950 | $49,590 |
+
+Detailed calculation (same for both; only rate changes):
 
 | Metric | Calculation | Result |
 |--------|------------|--------|
 | Daily savings per developer | 127 min = 2.12 hours | 2.12 hrs/dev/day |
-| Weekly savings per developer | 2.12 * 5 days | 10.6 hrs/dev/week |
-| Annual savings per developer | 10.6 * 52 weeks | 551 hrs/dev/year |
-| Annual savings for 10-person team | 551 * 10 | 5,510 hrs/year |
-| Dollar value at $150/hr | 5,510 * $150 | **$826,500/year** |
+| Weekly savings per developer | 2.12 x 5 days | 10.6 hrs/dev/week |
+| Annual savings per developer | 10.6 x 52 weeks | 551 hrs/dev/year |
+| Annual savings for 10-person team | 551 x 10 | 5,510 hrs/year |
 
-**Conservative estimate (20% capture rate):** $165,300/year
-
-**Assumptions behind the headline number:** The 127 min/day figure assumes an active developer running 3 code reviews, 2 test writing sessions, and 2 commit/PR cycles per day. Not every developer will hit all four activities every day. The math is internally correct (127 min x 260 days x 10 devs x $150/hr = $826,500), but the frequency assumptions are on the high end. The $165,300 conservative number is the safer figure to present to leadership, since it already accounts for days when AI output requires rework or the workflow is not followed.
+**Assumptions:** The 127 min/day figure assumes an active developer running 3 code reviews, 2 test writing sessions, and 2 commit/PR cycles per day. Not every developer will hit all four activities every day. The conservative 20% capture rate accounts for days when AI output requires rework, the workflow is not followed, or the team is still learning the tools. Use the 20% number when presenting to leadership.
 
 ---
 
