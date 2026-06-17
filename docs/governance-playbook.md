@@ -33,7 +33,7 @@ This playbook covers rolling out the AI-augmented development pipeline to a 10-p
 **Goal:** Adjust hook rules based on real usage data
 
 **Actions:**
-- Review `audit.jsonl` from week 1 -- look for blocked actions (exit_code: 2 entries)
+- Review `audit.jsonl` from week 1. Look for blocked actions (exit_code: 2 entries)
 - For each blocked action, determine: was it a real threat or a false positive?
 - Update `validate-bash.py` if any project-specific dangerous commands were missed
 - Update `scope-guard.sh` if any legitimate directories were blocked (e.g., `static/` or `migrations/`)
@@ -53,7 +53,7 @@ This playbook covers rolling out the AI-augmented development pipeline to a 10-p
 **Actions:**
 - 1-hour team workshop: live demo of `/ship` end-to-end (screen share, real ticket)
 - Each engineer runs `/onboard` independently on the repo to verify setup
-- Walk through what each hook does and why -- engineers need to understand the controls, not just accept them
+- Walk through what each hook does and why. Engineers need to understand the controls, not just accept them
 - Agree on a shared location for audit logs (local per machine, or a shared network path)
 - Add `/review` to the team's PR checklist in the GitHub PR template
 

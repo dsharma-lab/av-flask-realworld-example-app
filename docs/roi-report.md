@@ -8,7 +8,7 @@ See `docs/workflow-map.md` for the full Mermaid diagram with step annotations.
 
 ## Before/After Time Comparison
 
-### Baseline Task (Manual -- no AI assistance)
+### Baseline Task (Manual, no AI assistance)
 
 **Task:** Fix the article list endpoint to support tag filtering
 **Method:** Manual implementation, manual test writing, manual PR creation
@@ -68,7 +68,7 @@ See `docs/workflow-map.md` for the full Mermaid diagram with step annotations.
 
 **Conservative estimate (20% capture rate):** $165,300/year
 
-Even accounting for AI errors requiring rework, time spent reviewing AI output, and a learning curve for new team members, the ROI is strongly positive. Claude Code costs a small fraction of this.
+**Assumptions behind the headline number:** The 127 min/day figure assumes an active developer running 3 code reviews, 2 test writing sessions, and 2 commit/PR cycles per day. Not every developer will hit all four activities every day. The math is internally correct (127 min x 260 days x 10 devs x $150/hr = $826,500), but the frequency assumptions are on the high end. The $165,300 conservative number is the safer figure to present to leadership, since it already accounts for days when AI output requires rework or the workflow is not followed.
 
 ---
 
@@ -79,7 +79,7 @@ Even accounting for AI errors requiring rework, time spent reviewing AI output, 
 | Convention violation catch rate | ~60% (manual review) | ~95% (`/review` against CLAUDE.md) |
 | Error cases per endpoint test | 1-2 (happy path + one failure) | 4-5 (happy + auth failure + invalid input + not found + edge case) |
 | Commit message format compliance | ~40% (inconsistent) | 100% (conventional commit format enforced) |
-| PR description quality | Variable -- often minimal | Consistently documents changes from diff |
+| PR description quality | Variable, often minimal | Consistently documents changes from diff |
 
 ---
 

@@ -111,9 +111,9 @@ Marshmallow schemas handle request/response transformation:
 ### Development Flow
 1. Pick up ticket, read CLAUDE.md to orient on architecture
 2. Use `/onboard` if unfamiliar with a module (articles, user, profile)
-3. Implement changes in the correct module -- follow the models/views/serializers pattern
+3. Implement changes in the correct module (follow the models/views/serializers pattern)
 4. Always update or add tests alongside code changes
-5. Run `/review` before committing -- catches convention violations automatically
+5. Run `/review` before committing (catches convention violations automatically)
 6. Use `/ship` for the commit + PR step
 
 ### Commit Message Format
@@ -124,7 +124,7 @@ Use conventional commits: `type(scope): description`
 - Examples: `feat(articles): add tag filtering`, `fix(auth): return 401 on expired JWT`
 
 ### Branch Naming
-`type/short-description` -- e.g., `feat/tag-filtering`, `fix/jwt-expiry`
+`type/short-description`, e.g., `feat/tag-filtering`, `fix/jwt-expiry`
 
 ### What Not to Do
 - Do not hardcode secrets, API keys, or passwords in any file
@@ -140,7 +140,7 @@ Use conventional commits: `type(scope): description`
 - API endpoint tests: use `testapp` fixture (WebTest), call the full endpoint path
 - Model tests: use `db` fixture, interact with models directly
 - Always test: happy path + 401 (auth failure) + 400 (invalid input) + 404 (not found)
-- Never use a live database -- SQLite in-memory only (`sqlite://` in TestConfig)
+- Never use a live database. SQLite in-memory only (`sqlite://` in TestConfig)
 
 ### What Must Have Tests
 - Every new API endpoint (at minimum: success case + unauthenticated case)
@@ -161,11 +161,11 @@ All tests must pass before merging. No exceptions.
 ## AI Pipeline Usage
 
 ### Slash Commands Available
-- `/review` -- check staged changes against these conventions before committing
-- `/test-gen` -- generate tests for changed files and run them
-- `/commit` -- generate a conventional commit message and commit
-- `/ship` -- full pipeline (review + test + commit + PR); use this for end-of-feature
-- `/onboard` -- generate architecture overview for a module or the full project
+- `/review`: check staged changes against these conventions before committing
+- `/test-gen`: generate tests for changed files and run them
+- `/commit`: generate a conventional commit message and commit
+- `/ship`: full pipeline (review + test + commit + PR); use this for end-of-feature
+- `/onboard`: generate architecture overview for a module or the full project
 
 ### Governance Hooks Active
 - `validate-bash.py`: blocks destructive bash commands (rm -rf, git push --force, etc.)
